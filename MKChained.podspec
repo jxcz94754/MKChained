@@ -28,11 +28,10 @@ This is a chain of grammar public libraries You can use to reduce their own code
 
   s.source       = { :git => "https://github.com/jxcz94754/MKChained.git", :tag => "0.0.1" }
 
-  s.source_files  = "MKChainedDemo/MKChainedDemo/MKChainedObjectFrameWork/*"
+  s.source_files  = "MKChainedFrameWork/*"
 
   s.frameworks = "Foundation"
 
-  s.vendored_frameworks = 'MKChainedObject.framework'
 
   s.requires_arc = true
 
