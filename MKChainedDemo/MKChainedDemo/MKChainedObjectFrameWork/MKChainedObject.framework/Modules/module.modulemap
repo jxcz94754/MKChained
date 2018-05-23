@@ -1,0 +1,6 @@
+framework module MKChainedObject {
+  umbrella header "MKChainedObject.h"
+
+  export *
+  module * { export * }
+}
