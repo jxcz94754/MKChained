@@ -11,17 +11,18 @@
 #import "MKChainedClassConst.h"
 #import "MKChainedClassError.h"
 
+//数据源类型
 typedef NS_ENUM(NSUInteger, MKChainedParamsType) {
-    MKChainedParamsString = 100,             // String
-    MKChainedParamsNumber = 101,             // Number
-    MKChainedParamsArray = 102,              // Array
-    MKChainedParamsModel = 103,              // Model
+    MKChainedParamsDictionary = 101,         // Dictionary
+    MKChainedParamsArray = 102              // Array
 };
 
 @interface MKChainedPropertyClass : NSObject
 
 
 @property (assign, nonatomic) MKChainedParamsType chainedParamsType; //参数的类型
+
+@property (assign, nonatomic) BOOL allowEmpty;                      //是否允许空值的存在
 
 //根据不同的方式来进行数据赋值
 
@@ -34,7 +35,6 @@ typedef NS_ENUM(NSUInteger, MKChainedParamsType) {
 //对参数params内的数据进行判断的类
 @interface MKChainedCheckPropertyClass : MKChainedPropertyClass
 
-
 //显示获取当前类的属性类型
 + (NSString *_Nullable)PropertiesName:(const char * _Nullable)property_Attributes;
 
@@ -45,9 +45,6 @@ typedef NS_ENUM(NSUInteger, MKChainedParamsType) {
 + (BOOL)checkNODifferenceWithPropertyName:(NSString * _Nullable )propertyName
                            WithParamsName:(NSString *_Nullable)paramsName
                               AndProperty:(NSString *_Nullable)property;
-
-//获取错误类型
-+ (MKChainedClassErrorType)getMKChainedClassError;
 
 @end
 

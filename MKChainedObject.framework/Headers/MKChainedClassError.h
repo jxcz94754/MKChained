@@ -27,6 +27,8 @@ typedef NS_ENUM(NSUInteger, MKChainedClassErrorType) {
 
 + (void)showErrorWithMKChainedClassErrorType:(MKChainedClassErrorType)classErrorType; //show NSLog with MKChainedClassErrorType
 
++ (void)showErrorWithMKChainedClassErrorType:(MKChainedClassErrorType)classErrorType
+                              WithErrorValue:(NSString *)errorValue; //show NSLog with MKChainedClassErrorType and errorValue
 
 /**
  显示错误的类型名字
@@ -38,5 +40,8 @@ typedef NS_ENUM(NSUInteger, MKChainedClassErrorType) {
 + (void)showErrrorPropertyName:(NSString *)propertyName
            ErrorParamsProperty:(NSString *)errorType
              CorrectParamsName:(NSString *)correctType;
+
+//获取错误的类型
+- (MKChainedClassErrorType)getMKChainedClassErrorType;
 
 @end
